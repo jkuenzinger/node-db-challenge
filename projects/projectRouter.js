@@ -57,7 +57,7 @@ projectRouter.post("/", (req, res) => {
 
 
 
-projectRouter.post("/resources", (rew, res) => {
+projectRouter.post("/resources", (req, res) => {
     Projects.addResource(req.body)
     .then(resource => {
         res.status(201).json({id: `${resource}`, ...req.body})
@@ -74,7 +74,7 @@ projectRouter.post("/tasks", (req, res) => {
         res.status(201).json({ id: `${task}`, ...addedTask });
       })
       .catch(err => {
-       // console.log(err); uncomment this if getting errors posting a new task
+       //console.log(err); 
         res.status(500).json({ message: "Error creating new task" });
       });
   });
